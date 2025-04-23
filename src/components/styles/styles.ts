@@ -33,7 +33,8 @@ export const Button = styled.button`
     justify-content: center;
     background: ${({ theme }) => theme.colors.text};
     color: ${({ theme }) => theme.colors.dark};
-    font-family: ${({ theme }) => theme.fonts.main}
+    font-family: ${({ theme }) => theme.fonts.main};
+    border-radius: ${({ theme }) => theme.borderRadius};
     border: none;
     cursor: pointer;
     padding:10px;
