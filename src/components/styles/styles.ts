@@ -44,3 +44,15 @@ export const Icon = styled(Button)`
     color: ${({ theme }) => theme.colors.text};
     height: 45px;
 `;
+export const Input = styled.input`
+    border-radius: ${({ theme }) => theme.borderRadius};
+    color: ${({ theme }) => theme.colors.dark};
+    background: ${({ theme }) => theme.colors.light};
+    flex: 1;
+    height: 45px;
+    padding: 10px;
+`;
+export const FlexBetween = styled.div<{ width?: string }>`
+    width: ${({ width }) => width || "100%"};
+    ${flexBetween};
+`;
