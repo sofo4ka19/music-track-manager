@@ -28,15 +28,15 @@ export const AuthorText = styled.p`
     font-size: ${({ theme }) => theme.fontSizes.sm};
     font-family: ${({ theme }) => theme.fonts.main}
 `;
-export const Button = styled.button`
+export const Button = styled.button<{$lined?: boolean;}>`
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background: ${({ theme }) => theme.colors.text};
-    color: ${({ theme }) => theme.colors.dark};
+    background: ${props => props.$lined ? "none" :({ theme }) => theme.colors.text};
+    color: ${props => props.$lined ? ({ theme }) => theme.colors.text : ({ theme }) => theme.colors.dark};
     font-family: ${({ theme }) => theme.fonts.main};
     border-radius: ${({ theme }) => theme.borderRadius};
-    border: none;
+    border:  ${({ $lined, theme }) => $lined ? `2px solid ${theme.fonts.main}` : 'none'};
     cursor: pointer;
     padding:10px;
 `;
@@ -97,4 +97,22 @@ export const Container = styled.div`
     min-height: 100vh;
     padding: 50px 5%;
     box-sizing: border-box;
+`;
+export const Overlay = styled.div`
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const ModalContent = styled.div`
+  background: ${({ theme }) => theme.colors.background};
+  border-radius: ${({ theme }) => theme.borderRadius};
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  min-width: 50%;
 `;
