@@ -2,6 +2,7 @@ import axios from 'axios';
 
 const API_BASE = 'http://127.0.0.1:8000';
 
+export const getGenres = () => axios.get(`${API_BASE}/genres`)
 export const getTracks = () => axios.get(`${API_BASE}/tracks`);
 export const getTrackBySlug = (slug: string) => axios.get(`${API_BASE}/tracks/${slug}`);
 export const createTrack = (data: any) => axios.post(`${API_BASE}/tracks`, data);

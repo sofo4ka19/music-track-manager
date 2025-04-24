@@ -5,8 +5,10 @@ export interface TrackItemProps{
     id: string,
     title: string,
     artist: string,
+    album: string,
     coverImage: string,
-    audioFile?: string
+    audioFile?: string,
+    genres: string[]
 }
 
 const TrackItem: React.FC<TrackItemProps> = ({

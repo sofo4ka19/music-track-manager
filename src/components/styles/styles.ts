@@ -45,22 +45,34 @@ export const Icon = styled(Button)`
     color: ${({ theme }) => theme.colors.text};
     height: 45px;
 `;
-export const Input = styled.input`
+const enterInfo = css`
     border-radius: ${({ theme }) => theme.borderRadius};
     color: ${({ theme }) => theme.colors.dark};
     background: ${({ theme }) => theme.colors.light};
     flex: 1;
-    height: 45px;
     padding: 10px;
 `;
-export const FlexBetween = styled.div<{ width?: string }>`
+export const Input = styled.input`
+    ${enterInfo}
+    height: 45px;
+`;
+export const SelectDiv = styled.div`
+    ${enterInfo}
+    ${flexBetween}
+`;
+export const Label = styled.label`
+    font-family: ${({ theme }) => theme.fonts.main};
+    font-size: ${({ theme }) => theme.fontSizes.mid};
+`;
+export const FlexBetween = styled.div<{ width?: string, $wrap?:boolean }>`
     width: ${({ width }) => width || "100%"};
+    flex-wrap:${({$wrap}) => $wrap ? 'wrap': 'nowrap'}
     ${flexBetween};
 `;
-export const Header = styled.h1`
+export const Header = styled.h1<{ size?: string }>`
     text-align: center;
     width: 100%;
-    font-size: ${({ theme }) => theme.fontSizes.big};
+    font-size: ${({ size, theme }) => size || theme.fontSizes.big};
     color: ${({ theme }) => theme.colors.text};
     font-family: ${({ theme }) => theme.fonts.heading};
 `;
@@ -115,4 +127,27 @@ export const ModalContent = styled.div`
   flex-direction: column;
   padding: 20px;
   min-width: 50%;
+`;
+export const Tag = styled.div`
+    display: flex;
+    align-items: center;
+    background: ${({ theme }) => theme.colors.light};
+    color: ${({ theme }) => theme.colors.dark}
+    padding: 4px 8px;
+    border-radius: ${({ theme }) => theme.borderRadius};
+`;
+export const GenreSelect = styled.div`
+  margin-top: 8px;
+  background: ${({ theme }) => theme.colors.text};
+  border-radius: ${({ theme }) => theme.borderRadius};
+  padding: 8px;
+  max-height: 150px;
+  overflow-y: auto;
+  div {
+    padding: 6px;
+    cursor: pointer;
+    &:hover {
+      background-color:${({ theme }) => theme.colors.light};
+    }
+  }
 `;
