@@ -56,3 +56,37 @@ export const FlexBetween = styled.div<{ width?: string }>`
     width: ${({ width }) => width || "100%"};
     ${flexBetween};
 `;
+export const Header = styled.h1`
+    text-align: center;
+    width: 100%;
+    font-size: ${({ theme }) => theme.fontSizes.big};
+    color: ${({ theme }) => theme.colors.text};
+    font-family: color: ${({ theme }) => theme.fonts.heading};
+`;
+export const PlayerContainer = styled.div`
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 80px;
+  background: ${({ theme }) => theme.colors.light};
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+`;
+
+export const Title = styled.div`
+  font-size: 1rem;
+  color: ${({ theme }) => theme.colors.dark};
+`;
+
+export const Controls = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 10px;
+`;
+
+ export const Progress = styled.input`
+  width: 300px;
+`;
