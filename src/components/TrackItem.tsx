@@ -12,9 +12,10 @@ export interface TrackItemProps{
 }
 interface TrackItemProps2 extends TrackItemProps{
     onEdit: ()=>void;
+    onDelete: ()=>void;
 } 
 const TrackItem: React.FC<TrackItemProps2> = ({
-    id, title, artist, coverImage, audioFile, onEdit
+    id, title, artist, coverImage, audioFile, onEdit, onDelete
 }) => {
     return(
         <TrackCard data-testid={`track-item-${id}`}>
@@ -30,7 +31,7 @@ const TrackItem: React.FC<TrackItemProps2> = ({
                 <Icon><Play /></Icon> : <Button data-testid={`upload-track-${id}`}>upload file</Button>
                 }
                 <Icon data-testid={`edit-track-${id}`} onClick={onEdit}><Pencil /></Icon>
-                <Icon data-testid={`delete-track-${id}`}><Trash2 /></Icon>
+                <Icon data-testid={`delete-track-${id}`} onClick={onDelete}><Trash2 /></Icon>
             </div>
         </TrackCard>
     )

@@ -13,6 +13,7 @@ export const TrackCard = styled.div`
     background: ${({ theme }) => theme.colors.dark};
     color:  ${({ theme }) => theme.colors.text};
     border-radius: ${({ theme }) => theme.borderRadius};
+    margin-bottom: 15px;
 `;
 export const TrackImg = styled.img`
     border-radius: ${({ theme }) => theme.borderRadius};
