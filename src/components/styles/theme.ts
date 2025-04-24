@@ -14,8 +14,8 @@ export const theme = {
     },
     fontSizes: {
       big: '64px',
-      mid: '40px',
-      sm: '32px'
+      mid: '32px',
+      sm: '24px'
     },
     borderRadius: '15px'
   };

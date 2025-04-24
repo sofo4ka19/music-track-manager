@@ -8,8 +8,9 @@ const flexBetween = css`
 `;
 export const TrackCard = styled.div`
     ${flexBetween}
-    width: 90%;
-    background: ${({ theme }) => theme.colors.background};
+    align-items: center;
+    width: 100%;
+    background: ${({ theme }) => theme.colors.dark};
     color:  ${({ theme }) => theme.colors.text};
     border-radius: ${({ theme }) => theme.borderRadius};
 `;
@@ -61,7 +62,7 @@ export const Header = styled.h1`
     width: 100%;
     font-size: ${({ theme }) => theme.fontSizes.big};
     color: ${({ theme }) => theme.colors.text};
-    font-family: color: ${({ theme }) => theme.fonts.heading};
+    font-family: ${({ theme }) => theme.fonts.heading};
 `;
 export const PlayerContainer = styled.div`
   position: fixed;
@@ -89,4 +90,11 @@ export const Controls = styled.div`
 
  export const Progress = styled.input`
   width: 300px;
+`;
+export const Container = styled.div`
+    background: ${({ theme }) => theme.colors.background};
+    width: 100%;
+    min-height: 100vh;
+    padding: 50px 5%;
+    box-sizing: border-box;
 `;
