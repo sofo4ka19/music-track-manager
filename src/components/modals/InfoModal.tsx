@@ -6,7 +6,10 @@ import MultipleSelector from "../MultipleSelector";
 import { useGenres } from "../context/GenresContext";
 import { useState, useEffect } from "react";
 
-interface InfoModalProps extends ModalProps{
+interface InfoModalProps{
+    isOpen: boolean;
+    onClose: () => void;
+    onSave: () => void;
     initialData?: TrackItemProps;
 }
 const InfoModal = ({isOpen, onClose, onSave, initialData}:InfoModalProps) => {

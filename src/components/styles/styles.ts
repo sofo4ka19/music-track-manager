@@ -66,7 +66,7 @@ export const Label = styled.label`
 `;
 export const FlexBetween = styled.div<{ width?: string, $wrap?:boolean }>`
     width: ${({ width }) => width || "100%"};
-    flex-wrap:${({$wrap}) => $wrap ? 'wrap': 'nowrap'}
+    flex-wrap:${({$wrap}) => $wrap ? 'wrap': 'nowrap'};
     ${flexBetween};
 `;
 export const Header = styled.h1<{ size?: string }>`

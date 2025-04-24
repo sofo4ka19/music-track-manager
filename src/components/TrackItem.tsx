@@ -10,9 +10,11 @@ export interface TrackItemProps{
     audioFile?: string,
     genres: string[]
 }
-
-const TrackItem: React.FC<TrackItemProps> = ({
-    id, title, artist, coverImage, audioFile,
+interface TrackItemProps2 extends TrackItemProps{
+    onEdit: ()=>void;
+} 
+const TrackItem: React.FC<TrackItemProps2> = ({
+    id, title, artist, coverImage, audioFile, onEdit
 }) => {
     return(
         <TrackCard data-testid={`track-item-${id}`}>
@@ -27,7 +29,7 @@ const TrackItem: React.FC<TrackItemProps> = ({
                 {audioFile ? 
                 <Icon><Play /></Icon> : <Button data-testid={`upload-track-${id}`}>upload file</Button>
                 }
-                <Icon data-testid={`edit-track-${id}`}><Pencil /></Icon>
+                <Icon data-testid={`edit-track-${id}`} onClick={onEdit}><Pencil /></Icon>
                 <Icon data-testid={`delete-track-${id}`}><Trash2 /></Icon>
             </div>
         </TrackCard>
